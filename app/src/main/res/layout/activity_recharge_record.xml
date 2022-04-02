@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyin.ui.money.RechargeRecordViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门店充值记录"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#F4F8FB"
+            android:paddingLeft="@dimen/size_48dp"
+            android:paddingRight="@dimen/size_48dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50dp"
+                android:layout_marginTop="@dimen/size_40dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/radius_white_8dp"
+                    android:paddingRight="@dimen/size_25dp"
+                    android:paddingLeft="@dimen/size_25dp"
+                    android:layout_marginRight="@dimen/size_5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="起始时间"
+                        android:textSize="@dimen/text_17sp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/main_black"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.start_time}"
+                        android:textSize="@dimen/text_17sp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/main_color"
+                        android:drawableRight="@mipmap/lower_sanjiao"
+                        android:drawablePadding="@dimen/size_10dp"
+                        binding:onClickCommand="@{viewModel.StateOnClick}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/radius_white_8dp"
+                    android:paddingRight="@dimen/size_25dp"
+                    android:paddingLeft="@dimen/size_25dp"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="结束时间"
+                        android:textSize="@dimen/text_17sp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/main_black"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.end_time}"
+                        android:textSize="@dimen/text_17sp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/main_color"
+                        android:drawableRight="@mipmap/lower_sanjiao"
+                        android:drawablePadding="@dimen/size_10dp"
+                        binding:onClickCommand="@{viewModel.EndOnClick}"
+                        />
+
+                </LinearLayout>
+                
+                
+                <TextView
+                    android:layout_width="@dimen/size_105dp"
+                    android:layout_height="match_parent"
+                    android:text="获取"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_18sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:layout_marginLeft="@dimen/size_126dp"
+                    binding:onClickCommand="@{viewModel.obtainOnClick}"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size_30dp"
+                >
+                <TextView
+                    android:layout_width="@dimen/size_100dp"
+                    android:layout_height="wrap_content"
+                    android:text="序号"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="@dimen/size_150dp"
+                    android:layout_height="wrap_content"
+                    android:text="会员信息"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="@dimen/size_100dp"
+                    android:layout_height="wrap_content"
+                    android:text="充值金额"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="获赠优惠券/张"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="@dimen/size_130dp"
+                    android:layout_height="wrap_content"
+                    android:text="充值方式"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="@dimen/size_120dp"
+                    android:layout_height="wrap_content"
+                    android:text="收银员"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="重置时间"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_black_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/sc_smartrefreshlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/size_15dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                >
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp"
+                    style="@style/RefreshStyle"/>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/czjl_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/size_10dp"
+                        android:overScrollMode="never" />
+                </androidx.core.widget.NestedScrollView>
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_40dp"
+                    style="@style/RefreshStyle"/>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

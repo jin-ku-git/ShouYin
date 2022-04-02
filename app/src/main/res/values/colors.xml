@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="viewLineColor">#F0F0F0</color>
+
+
+    <color name="main_color">#2196FF</color>
+    <color name="main_yellow">#F7B500</color>
+    <color name="main_green">#6DD400</color>
+    <color name="main_white">#FFFFFF</color>
+    <color name="main_black">#000000</color>
+    <color name="main_black_25">#40000000</color>
+    <color name="main_black_50">#80000000</color>
+    <color name="main_black_85">#BF000000</color>
+    <color name="main_black_54">#545454</color>
+    <color name="main_black_5B">#5B5B5B</color>
+    <color name="main_black_32">#292A32</color>
+    <color name="main_touming">#00000000</color>
+    <color name="text_main_top">#8B95AE</color>
+    <color name="text_39">#393939</color>
+    <color name="color_hui">#F4F8FB</color>
+    <color name="color_red">#F80000</color>
+
+
+
+
+
+</resources>

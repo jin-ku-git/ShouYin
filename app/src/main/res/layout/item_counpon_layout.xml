@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_height="wrap_content">
+
+    <com.youwu.shouyin.utils_view.ScaleLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/counpon_bj"
+        attr:widthToHeight="0.25"
+        >
+        <LinearLayout
+            android:id="@+id/shangpin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:layout_marginEnd="@dimen/size_16dp"
+            android:layout_marginTop="@dimen/size_9dp"
+            android:layout_marginBottom="@dimen/size_6dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/cou_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全品类商品无门槛"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/text_12sp"
+                   android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_choice"
+                    android:layout_width="@dimen/size_22dp"
+                    android:layout_height="@dimen/size_15dp"
+                    android:src="@mipmap/cou_xz_blue"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额："
+                    android:textSize="@dimen/text_12sp"
+                    android:textColor="@color/main_black"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_price_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="¥"
+                    android:textColor="#F80000"
+                    android:textSize="@dimen/text_12sp"  />
+
+                <TextView
+                    android:id="@+id/cou_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@id/tv_price_key"
+                    android:text="499"
+                    android:textColor="#F80000"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_25sp"  />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/cou_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用时间：2021.03.24~2022.03.24"
+                android:textColor="#6B6B6B"
+                android:textSize="@dimen/min_text_10sp"
+                />
+
+
+        </LinearLayout>
+    </com.youwu.shouyin.utils_view.ScaleLayout>
+
+
+
+</RelativeLayout>

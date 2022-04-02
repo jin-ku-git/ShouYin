@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/layout_system"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/main_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:ems="1"
+            android:gravity="center"
+            android:maxEms="1"
+            android:text="系统输入法"
+            android:textColor="@color/main_black"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_view"
+        android:layout_width="@dimen/size_250dp"
+        android:layout_height="match_parent"
+
+        android:background="@color/main_white"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_keybords" />
+
+    <LinearLayout
+        android:layout_width="@dimen/size_80dp"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_del"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/size_5dp"
+            android:background="@drawable/radius_jian_pan_hui_5dp"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/size_30dp"
+                android:layout_height="@dimen/size_30dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_keybords_del" />
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="#D8D8D8" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_spot"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/size_5dp"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:text="."
+                android:gravity="center"
+                android:padding="@dimen/size_10dp"
+                android:textSize="@dimen/text_30sp"
+                android:textColor="@color/black"
+                android:background="@drawable/radius_jian_pan_hui_5dp"
+                />
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="#D8D8D8" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_zero"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/size_5dp"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:text="0"
+                android:gravity="center"
+                android:padding="@dimen/size_10dp"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/black"
+                android:background="@drawable/radius_jian_pan_hui_5dp"
+                />
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="#D8D8D8" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/btn_confirm"
+        android:layout_width="@dimen/size_70dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/radius_blue_5dp"
+        android:layout_marginBottom="@dimen/size_5dp"
+        android:layout_margin="@dimen/size_5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:ems="1"
+            android:gravity="center"
+            android:maxEms="1"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+
+</LinearLayout>

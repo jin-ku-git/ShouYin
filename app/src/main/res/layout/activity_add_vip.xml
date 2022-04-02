@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyin.ui.vip.AddVipViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加会员"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F8FB"
+            android:orientation="vertical"
+            >
+
+            <!-- 会员名称 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_25dp"
+                >
+                <TextView
+                    android:id="@+id/hongxing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="#E02020"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_26dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/hongxing"
+                    android:background="@null"
+                    android:hint="请输入会员姓名"
+                    android:text="@={viewModel.vip_name}"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    android:theme="@style/WhiteEditText"
+                    />
+            </RelativeLayout>
+            <!-- 会员名称 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+                <TextView
+                    android:id="@+id/hongxing_tow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="#E02020"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_26dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/hongxing_tow"
+                    android:background="@null"
+                    android:hint="请输入会员手机号"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:selectAllOnFocus="true"
+                    android:digits="1234567890"
+                    android:text="@={viewModel.vip_tel}"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    android:theme="@style/WhiteEditText"
+                    />
+            </RelativeLayout>
+
+            <!-- 开卡日期 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开卡日期："
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/size_35dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.vip_start_time}"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+            <!-- 备注信息 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+                <TextView
+                    android:id="@+id/bz_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="备注："
+                    android:textColor="#858585"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_35dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/bz_text"
+                    android:background="@null"
+                    android:hint="请输入备注信息"
+                    android:text="@={viewModel.vip_remarks}"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="16sp"
+                    android:theme="@style/WhiteEditText"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_39dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="取消创建"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_lv_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.cancelOnClick}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="创建会员信息"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.AddVipOnClick}"
+                    />
+
+            </LinearLayout>
+
+            <!-- 键盘 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:visibility="gone"
+                android:layout_weight="1">
+
+                <com.youwu.shouyin.jianpan.MyCustKeybords
+                    android:id="@+id/custom_keyboard"
+                    android:layout_width="600dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:needSystem="false" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

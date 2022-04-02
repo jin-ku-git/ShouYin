@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyin.ui.login.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/log_background"
+                android:layout_weight="7"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/image_logo"
+                android:layout_marginLeft="@dimen/size_75dp"
+                android:layout_marginRight="@dimen/size_75dp"
+                android:layout_centerVertical="true"
+                android:layout_weight="5"
+                android:layout_gravity="center"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入账号"
+                        android:text="@={viewModel.userName}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textColorHint"
+                        android:textSize="16sp"
+                        android:inputType="number"
+                        android:theme="@style/WhiteEditText"
+                        binding:onFocusChangeCommand="@{viewModel.onFocusChangeCommand}" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:src="@mipmap/clean_edit"
+                        android:visibility="@{viewModel.clearBtnVisibility}"
+                        binding:onClickCommand="@{viewModel.clearUserNameOnClickCommand}" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_color"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入密码"
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.password}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textColorHint"
+                        android:theme="@style/WhiteEditText"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_swich_passwrod"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:src="@mipmap/show_psw_press"
+                        binding:onClickCommand="@{viewModel.passwordShowSwitchOnClickCommand}" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_color"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/size_137dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_45dp"
+                    android:background="@drawable/radius_blue_45dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        android:text="登录"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_15sp"
+                        binding:onClickCommand="@{viewModel.loginOnClickCommand}" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/logo_top_right"
+            android:layout_alignParentRight="true"
+            />
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/logo_bottom_right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/size_23dp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/size_15dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/size_10dp">
+        <com.youwu.shouyin.utils_view.ScaleLayout
+            android:layout_width="@dimen/size_110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_white_8dp"
+            attr:widthToHeight="0.76">
+
+            <com.youwu.shouyin.utils_view.CustomRoundAngleImageView
+                android:id="@+id/iv_commodity_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shiwu"
+                roundiv:radius="8dp"
+                tools:src="@mipmap/shiwu"
+
+                />
+        </com.youwu.shouyin.utils_view.ScaleLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/size_10dp"
+            >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="柴火大院"
+            android:textColor="#333333"
+            android:textSize="@dimen/text_14sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_price_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="¥"
+                android:textColor="#F80000"
+                android:textSize="@dimen/text_13sp"  />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@id/tv_price_key"
+                android:text="499"
+                android:textColor="#F80000"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_23sp"  />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="x"
+                    android:textColor="#A7A7A7"
+                    android:textSize="@dimen/text_15sp" />
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#A7A7A7"
+                    android:layout_marginLeft="@dimen/size_5dp"
+                    android:textSize="@dimen/text_15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

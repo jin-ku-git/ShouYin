@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyin.ui.vip.SouSuoVipViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.type_state==1?@string/vip_search:@string/vip_details}"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F8FB"
+            android:orientation="vertical"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_35dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/size_128dp"
+            android:layout_marginEnd="@dimen/size_128dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:visibility="@{viewModel.type_state==1?View.VISIBLE:View.GONE}"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/radius_white_xian_45"
+                android:paddingLeft="@dimen/size_15dp"
+                android:layout_weight="1"
+                >
+                <EditText
+                    android:id="@+id/sou_suo_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="搜索会员手机号"
+                    android:text="@={viewModel.vip_tel}"
+                    android:textSize="@dimen/text_12sp"
+                    android:gravity="left|center"
+                    android:theme="@style/WhiteEditText"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:drawableLeft="@mipmap/sousuo"
+                    android:drawablePadding="@dimen/size_5dp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/cancel_sou_suo"
+                android:layout_width="@dimen/size_90dp"
+                android:layout_height="match_parent"
+                android:text="搜索"
+                android:textSize="@dimen/text_12sp"
+                android:gravity="center"
+                android:textColor="@color/main_black"
+                android:background="@drawable/radius_hui_45dp"
+                android:layout_marginLeft="@dimen/size_8dp"
+                binding:onClickCommand="@{viewModel.SouSuoOnClick}"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_100dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/size_128dp"
+            android:layout_marginEnd="@dimen/size_128dp"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:background="@drawable/radius_white_8dp"
+            >
+            <com.youwu.shouyin.utils_view.CircleImageView
+                android:id="@+id/vip_img"
+                android:layout_width="@dimen/size_84dp"
+                android:layout_height="@dimen/size_84dp"
+                tools:src="@mipmap/user_image"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_11dp"
+                android:src="@mipmap/user_image"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/vip_img"
+                android:layout_marginLeft="@dimen/size_12dp"
+                android:layout_centerVertical="true"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="会员名称："
+                        android:textSize="@dimen/text_15sp"
+                        android:textColor="@color/main_black"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.vip_name}"
+                        android:textSize="@dimen/text_15sp"
+                        android:textColor="@color/main_black"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机号："
+                        android:textSize="@dimen/text_15sp"
+                        android:textColor="@color/main_black"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.vip_tel}"
+                        android:textSize="@dimen/text_15sp"
+                        android:textColor="@color/main_black"
+
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="余额："
+                        android:textSize="@dimen/text_15sp"
+                        android:textColor="@color/main_black"
+                        />
+                    <TextView
+                        android:id="@+id/tv_price_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="¥"
+                        android:textColor="#F80000"
+                        android:textSize="@dimen/text_13sp"  />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@id/tv_price_key"
+                        android:text="@={viewModel.vip_money}"
+                        android:textColor="#F80000"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_23sp"  />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            
+        </RelativeLayout>
+            <!-- 开卡日期 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开卡日期：2022.03.23"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_35dp"
+                    />
+            </RelativeLayout>
+
+            <!-- 备注信息 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/radius_white_8dp"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                >
+                <TextView
+                    android:id="@+id/bz_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="备注信息："
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_35dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/bz_text"
+                    android:background="@null"
+                    android:hint="请输入备注信息"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="16sp"
+                    android:theme="@style/WhiteEditText"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="推送优惠券"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_lv_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.PushDisOnClick}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="充值"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_orange_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.RechargeOnClick}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@{viewModel.type_state==1?@string/choice_vip:@string/cancel_vip}"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.ChoiceOnClick}"
+                    />
+
+            </LinearLayout>
+
+            <!-- 键盘 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:visibility="gone"
+                android:layout_weight="1">
+
+                <com.youwu.shouyin.jianpan.MyCustKeybords
+                    android:id="@+id/custom_keyboard"
+                    android:layout_width="600dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:needSystem="false" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

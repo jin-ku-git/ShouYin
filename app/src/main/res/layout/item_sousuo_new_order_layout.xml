@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/shangpin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_white_8dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/size_8dp"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:layout_marginRight="@dimen/size_5dp"
+        android:layout_marginLeft="@dimen/size_5dp"
+        >
+        
+        <com.youwu.shouyin.utils_view.ScaleLayout
+            android:layout_width="@dimen/size_110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_white_8dp"
+            attr:widthToHeight="0.76">
+
+            <com.youwu.shouyin.utils_view.CustomRoundAngleImageView
+                android:id="@+id/iv_commodity_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shiwu"
+                roundiv:left_top_radius="8dp"
+                roundiv:right_top_radius="8dp"
+                tools:src="@mipmap/shiwu"
+                android:layout_weight="3"
+
+                />
+        </com.youwu.shouyin.utils_view.ScaleLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_12dp"
+                >
+                <TextView
+                    android:id="@+id/item_sousuo_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="云南辣椒炒肉"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15sp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    >
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="#F80000"
+                        android:textSize="@dimen/text_13sp" />
+                    <TextView
+                        android:id="@+id/com_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.9"
+                        android:textColor="#F80000"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_23sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        <Button
+            android:id="@+id/add_shopping"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="match_parent"
+            android:text="添加"
+            android:textSize="@dimen/text_14sp"
+            android:gravity="center"
+            android:textColor="@color/main_white"
+            android:background="@drawable/radius_blue_5dp"
+            android:visibility="invisible"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

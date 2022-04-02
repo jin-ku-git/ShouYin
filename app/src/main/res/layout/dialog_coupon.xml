@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/radius_white"
+    android:id="@+id/layout_view"
+    android:paddingTop="@dimen/size_25dp"
+    android:paddingLeft="@dimen/size_35dp"
+    android:paddingRight="@dimen/size_35dp"
+    android:paddingBottom="@dimen/size_30dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/close_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="#40000000"
+            android:drawableLeft="@mipmap/lift_sanjiao"
+            android:drawablePadding="@dimen/size_5dp"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择优惠券"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="@color/main_black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coupon_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_marginTop="@dimen/size_33dp"
+        android:layout_weight="1"
+        />
+
+
+    <TextView
+        android:id="@+id/use_coupon"
+        android:layout_width="@dimen/size_350dp"
+        android:layout_height="@dimen/size_49dp"
+        android:text="确认使用"
+        android:textColor="@color/main_white"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size_45dp"
+        android:textSize="@dimen/text_15sp"
+        android:background="@drawable/radius_blue_8dp"
+        />
+</LinearLayout>

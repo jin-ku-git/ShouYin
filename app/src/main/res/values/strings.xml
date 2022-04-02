@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">先每餐饮收银</string>
+
+    <string name="choice_vip">选择会员</string>
+    <string name="cancel_vip">取消选择</string>
+
+    <string name="vip_details">会员信息</string>
+    <string name="vip_search">搜索会员</string>
+</resources>

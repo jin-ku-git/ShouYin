@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyin.ui.money.VipRechargeViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.TOP_TITLE}"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+        <!-- 充值列表 -->
+
+        <LinearLayout
+            android:id="@+id/recharge_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F8FB"
+            android:orientation="vertical"
+            android:layout_below="@+id/top_layout"
+            android:paddingTop="@dimen/size_26dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/prick_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_weight="1"
+                android:overScrollMode="never" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_39dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginBottom="@dimen/size_50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radius_lv_8dp"
+                    android:gravity="center"
+                    android:text="自定义充值金额"
+                    android:textColor="@color/main_white"
+                    android:textSize="@dimen/text_17sp"
+                    binding:onClickCommand="@{viewModel.customOnClick}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:gravity="center"
+                    android:text="现金充值"
+                    android:textColor="@color/main_white"
+                    android:textSize="@dimen/text_17sp"
+                    binding:onClickCommand="@{viewModel.cashRechargeOnClick}" />
+
+            </LinearLayout>
+
+            <!-- 键盘 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <com.youwu.shouyin.jianpan.MyCustKeybords
+                    android:id="@+id/custom_keyboard"
+                    android:layout_width="600dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:needSystem="false" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <!-- 自定义充值 -->
+        <RelativeLayout
+            android:id="@+id/custom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#F4F8FB"
+            android:layout_below="@+id/top_layout"
+            android:visibility="@{viewModel.custom_bool==true?View.VISIBLE:View.GONE}"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_25dp"
+                android:background="@drawable/radius_white_5dp"
+                android:padding="@dimen/size_15dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请输入您要充值的金额"
+                    android:textSize="15sp"
+                    android:textColor="@color/main_black_85"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:layout_marginLeft="@dimen/size_45dp"
+                    >
+                    <TextView
+                        android:id="@+id/rmb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="@color/main_color"
+                        android:textSize="22sp"
+                        android:layout_alignParentBottom="true"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_50dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:selectAllOnFocus="true"
+                        android:digits="1234567890."
+                        android:textColor="@color/main_color"
+                        android:textColorHint="@color/textColorHint"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:layout_toRightOf="@id/rmb"
+                        android:layout_marginLeft="@dimen/size_5dp"
+                        android:theme="@style/WhiteEditText"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#979797"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@id/rmb"
+                        android:layout_marginLeft="@dimen/size_5dp"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_39dp"
+                android:layout_marginBottom="@dimen/size_50dp"
+                android:layout_alignParentBottom="true"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="返回充值列表"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_lv_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.RechargeListOnClick}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="现金充值"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.cashRechargeOnClick}"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

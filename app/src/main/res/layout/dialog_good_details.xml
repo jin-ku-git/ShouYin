@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/radius_white"
+    android:id="@+id/layout_view"
+    android:paddingTop="@dimen/size_25dp"
+    android:paddingLeft="@dimen/size_35dp"
+    android:paddingRight="@dimen/size_35dp"
+    android:paddingBottom="@dimen/size_30dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/close_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="#40000000"
+            android:drawableLeft="@mipmap/lift_sanjiao"
+            android:drawablePadding="@dimen/size_5dp"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品详情"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="@color/main_black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/size_35dp"
+        >
+        <com.youwu.shouyin.utils_view.CustomRoundAngleImageView
+            android:id="@+id/iv_commodity_img"
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="@dimen/size_85dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/shiwu"
+            roundiv:radius="5dp"
+            tools:src="@mipmap/shiwu"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="柴火大院"
+                android:textColor="@color/main_color"
+                android:textSize="@dimen/text_20sp" />
+
+            <TextView
+                android:id="@+id/goods_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商品编号：123456"
+                android:textColor="#292A32"
+                android:textSize="@dimen/text_13sp"
+                android:layout_marginTop="@dimen/size_8dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_price_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="¥"
+                    android:textColor="#F80000"
+                    android:textSize="@dimen/text_13sp"  />
+
+                <TextView
+                    android:id="@+id/goods_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@id/tv_price_key"
+                    android:text="499"
+                    android:textColor="#F80000"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_23sp"  />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_edit_subtract"
+                        android:layout_width="@dimen/size_30dp"
+                        android:layout_height="@dimen/size_30dp"
+                        android:src="@mipmap/jianhao" />
+
+                    <EditText
+                        android:id="@+id/goods_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/size_12dp"
+                        android:paddingRight="@dimen/size_12dp"
+                        android:paddingBottom="@dimen/size_3dp"
+                        android:paddingTop="@dimen/size_3dp"
+                        android:hint="1"
+                        android:textColorHint="@color/black"
+                        android:selectAllOnFocus="true"
+                        android:theme="@style/WhiteEditText"
+                        android:digits="0123456789"
+                        android:inputType="phone|number"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/text_15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_edit_add"
+                        android:layout_width="@dimen/size_30dp"
+                        android:layout_height="@dimen/size_30dp"
+                        android:src="@mipmap/jiahao" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/size_15dp"
+        android:background="@drawable/radius_hui_8dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_tc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+
+            />
+    </LinearLayout>
+    <!-- 键盘 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_15dp"
+        android:visibility="gone"
+        android:layout_weight="1">
+
+        <com.youwu.shouyin.jianpan.MyCustKeybords
+            android:id="@+id/custom_keyboard"
+            android:layout_width="600dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:needSystem="false" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/add_shopping"
+        android:layout_width="@dimen/size_350dp"
+        android:layout_height="@dimen/size_49dp"
+        android:text="加入购物车"
+        android:textColor="@color/main_white"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size_45dp"
+        android:textSize="@dimen/text_15sp"
+        android:background="@drawable/radius_blue_8dp"
+        />
+
+
+
+
+</LinearLayout>

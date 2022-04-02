@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youwu.shouyin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.youwu.shouyin.app.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.youwu.shouyin.ui.login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.youwu.shouyin.ui.main.DemoActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.tab_bar.activity.TabBarActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.viewpager.activity.ViewPagerActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.vip.SouSuoVipActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.set_up.SetUpActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.money.RechargeRecordActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.money.CashierActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.money.VipRechargeActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.money.SalesDocumentActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.vip.AddVipActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.handover.HandoverActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.handover.SaleGoodsListActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.order_goods.OrderGoodsActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.order_goods.NewOrderGoodsActivity"/>
+        <activity android:name="com.youwu.shouyin.ui.order_goods.ConfirmOrderActivity"/>
+    </application>
+
+</manifest>
